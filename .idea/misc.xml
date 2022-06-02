@@ -7,13 +7,14 @@
         <entry key="app/src/main/res/drawable/avatar_border.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/card_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_circle.xml" value="0.2984375" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_circle_left_24.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/indicator.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/tab_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/tab_text_color.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2689317159351967" />
         <entry key="app/src/main/res/layout/fragment_nabi.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/fragment_rasul.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/item_recycler_nabi_rasul.xml" value="0.25" />
