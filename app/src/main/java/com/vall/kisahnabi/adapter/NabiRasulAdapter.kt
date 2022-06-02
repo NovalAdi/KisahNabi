@@ -37,7 +37,6 @@ class NabiRasulAdapter: RecyclerView.Adapter<NabiRasulAdapter.ViewHolder>() {
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, DetailActivity::class.java)
             intent.putExtra(DetailActivity.DATA, data)
-
             it.context.startActivity(intent)
         }
     }

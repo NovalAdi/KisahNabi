@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KisahNabi">
         <activity
+            android:name=".DisconnectedActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
             android:name=".DetailActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

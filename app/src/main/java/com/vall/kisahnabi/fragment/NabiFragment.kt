@@ -1,12 +1,14 @@
 package com.vall.kisahnabi.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vall.kisahnabi.R
+import com.vall.kisahnabi.DisconnectedActivity
 import com.vall.kisahnabi.adapter.NabiRasulAdapter
 import com.vall.kisahnabi.databinding.FragmentNabiBinding
 import com.vall.kisahnabi.model.ResponseNabiRasulItem
@@ -34,6 +36,17 @@ class NabiFragment : Fragment() {
             setHasFixedSize(true)
         }
 
+        binding.refreshNabi.setOnRefreshListener {
+            getDataNabi()
+            binding.refreshNabi.isRefreshing = false
+        }
+
+        getDataNabi()
+
+        return binding.root
+    }
+
+    private fun getDataNabi() {
         val call = RetrofitService.getService().getDataNabi()
 
         call.enqueue(object : Callback<List<ResponseNabiRasulItem>> {
@@ -41,15 +54,20 @@ class NabiFragment : Fragment() {
                 call: Call<List<ResponseNabiRasulItem>>,
                 response: Response<List<ResponseNabiRasulItem>>
             ) {
-                val list = response.body()!!
-                list.let { it.let { it1 -> adapters.addData(it1) } }
+                if (response.isSuccessful) {
+                    val list = response.body()!!
+                    list.let { it.let { it1 -> adapters.addData(it1) } }
+                    binding.progressBarNabi.visibility = View.INVISIBLE
+                } else {
+                    binding.progressBarNabi.visibility = View.VISIBLE
+                }
             }
 
             override fun onFailure(call: Call<List<ResponseNabiRasulItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Handler().postDelayed({
+                    startActivity(Intent(context, DisconnectedActivity::class.java))
+                }, 100)
             }
         })
-
-        return binding.root
     }
 }
