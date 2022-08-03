@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vall.kisahnabi.DisconnectedActivity
-import com.vall.kisahnabi.adapter.NabiRasulAdapter
+import com.vall.kisahnabi.adapter.RasulAdapter
 import com.vall.kisahnabi.databinding.FragmentRasulBinding
 import com.vall.kisahnabi.model.ResponseNabiRasulItem
 import com.vall.kisahnabi.network.RetrofitService
@@ -20,7 +20,7 @@ import retrofit2.Response
 class RasulFragment : Fragment() {
 
     private lateinit var binding: FragmentRasulBinding
-    lateinit var adapters: NabiRasulAdapter
+    lateinit var adapters: RasulAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +29,10 @@ class RasulFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRasulBinding.inflate(inflater,container,false)
 
-        adapters = NabiRasulAdapter()
+        adapters = RasulAdapter()
         binding.rvRasul.apply {
             adapter = adapters
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
         }
 

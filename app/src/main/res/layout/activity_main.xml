@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6AA1F2"
+    android:scrollbars="none"
     tools:context=".MainActivity">
 
     <TextView
@@ -37,12 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="8dp"
+            android:fadeScrollbars="false"
+            android:isScrollContainer="false"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
             app:tabIndicator="@drawable/tab_indicator"
+            app:tabIndicatorAnimationMode="elastic"
             app:tabIndicatorColor="#3F7BD7"
             app:tabIndicatorGravity="center"
             app:tabIndicatorHeight="50dp"
             app:tabRippleColor="@null"
-            app:tabIndicatorAnimationMode="elastic"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="#464646">
 
@@ -66,6 +70,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/card_background"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
